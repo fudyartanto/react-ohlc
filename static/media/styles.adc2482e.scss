@@ -1,0 +1,35 @@
+$loader-size: 200px;
+
+.home {
+  .content-loader-container {
+    padding: 20px 0;
+    position: relative;
+
+    .content-loader-wrapper {
+      height: $loader-size;
+      width: $loader-size;
+
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%)
+    }
+  }
+
+  .error {
+    position: relative;
+
+    .error-wrapper {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+
+      i {
+        font-size: 3em;
+        color: #c1c1c1;
+      }
+    }
+  }
+}
