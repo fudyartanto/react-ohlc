@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+$left-container-width: 50px;
+
+.container {
+  width: 100%;
+  position: relative;
+
+  .left, .right {
+    float: left;
+  }
+
+  .left {
+    width: $left-container-width;
+  }
+
+  .right {
+    width: calc(100% - #{$left-container-width});
+    overflow-x: auto;
+    overflow-y: hidden;
+    cursor: ew-resize;
+
+    .chart {
+    }
+  }
+
+  &::after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
+

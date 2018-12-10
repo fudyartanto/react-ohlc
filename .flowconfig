@@ -1,0 +1,11 @@
+[ignore]
+.*/node_modules/*
+
+[include]
+
+[libs]
+./flow-typed/global.js
+
+[options]
+module.name_mapper='.*\(.scss\)' -> 'CSSModule'
+module.system=haste
