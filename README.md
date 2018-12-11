@@ -15,7 +15,7 @@ cd example
 cp .env.example .env
 npm install && npm start
 ```
-* Note: Please change .env variable to your corresponding value
+* Note: Please change .env variable to your corresponding value. You can get alpha advantage api key here [https://www.alphavantage.co](https://www.alphavantage.co)
 
 ## Usage
 
