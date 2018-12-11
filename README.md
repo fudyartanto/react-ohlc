@@ -6,7 +6,7 @@
 3. [Contribution](#contribution)
 4. [Code Guideline](#code-guideline)
 
-## Run Example Projetc
+## Run Example Project
 ```bash
 git clone https://github.com/fudyartanto/react-ohlc.git
 cd react-ohlc
