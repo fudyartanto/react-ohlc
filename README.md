@@ -62,11 +62,11 @@ class Example extends Component<Props, State> {
 ```
 
 ## Contribution
-Open terminal and run this script bellow in the root folder of project
+Open terminal and run this command bellow in the root folder of project
 ```bash
 npm start
 ```
-Open another terminal and run this script bellow
+Open another terminal and run this command bellow
 ```bash
 cd example
 npm start
