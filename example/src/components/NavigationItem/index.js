@@ -1,12 +1,15 @@
 import React from 'react'
 import { Link, withRouter } from 'react-router-dom'
-import './styles.scss'
+import Humps from 'humps'
+import scss from  './styles.scss'
+
+const styles = Humps.camelizeKeys(scss)
 
 const NavigationItem = (props) => {
   const { title, url, location: { hash } } = props
-  let className = 'navigation-item'
+  let className = styles.navigationItem
   if (hash === url) {
-    className += ' active'
+    className += ` ${styles.active}`
   }
 
   return (

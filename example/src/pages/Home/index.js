@@ -3,7 +3,11 @@ import React, { Component } from 'react'
 import Ohlc, { Props as OhlcDataProps } from 'react-ohlc'
 import { getStockTimeSeriesDaily } from '../../services/AlphaVantage'
 import ContentLoader from 'react-content-loader'
+import Humps from 'humps'
 import './styles.scss'
+import scss from './styles.scss'
+
+const styles = Humps.camelizeKeys(scss)
 
 type Props = {
   location: { hash: string },
@@ -58,8 +62,8 @@ class App extends Component<Props, State> {
   renderLoader = () => {
     const { height } = this.props
     return (
-      <div className='content-loader-container' style={{ height }}>
-        <div className='content-loader-wrapper'>
+      <div className={styles.contentLoaderContainer} style={{ height }}>
+        <div className={styles.contentLoaderWrapper}>
           <ContentLoader height={400} width={400} >
             <rect x='55' y='210' rx='10' ry='10' width='40' height='150' />
             <rect x='115' y='160' rx='10' ry='10' width='40' height='200' />
@@ -78,8 +82,8 @@ class App extends Component<Props, State> {
     const { error } = this.state
 
     return (
-      <div className='error' style={{ height }}>
-        <div className='error-wrapper'>
+      <div className={styles.error} style={{ height }}>
+        <div className={styles.errorWrapper}>
           <i className='icon ion-ios-information-circle-outline'></i>
           <p>{ error }</p>
         </div>
@@ -91,7 +95,7 @@ class App extends Component<Props, State> {
     const { isLoading, data, error } = this.state
     const { height } = this.props
     return (
-      <div className='home'>
+      <div className={styles.home}>
         {
           isLoading ? this.renderLoader() : (
             error ? this.renderError() : <Ohlc height={height} data={data}/>

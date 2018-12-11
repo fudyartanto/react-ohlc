@@ -1,12 +1,14 @@
 // @flow
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
+import Humps from 'humps'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import NavitaionItem from './components/NavigationItem'
 import Home from './pages/Home'
-import './assets/styles/main.scss'
+import scss from './assets/styles/main.scss'
 
+const styles = Humps.camelizeKeys(scss)
 const stocks = [
   'msft',
   'aapl',
@@ -27,17 +29,17 @@ class App extends Component<Props> {
   render () {
     return (
       <Router>
-        <div className='app'>
+        <div className={styles.app}>
           <Header/>
-          <div className='body'>
-            <div className='navigation-container'>
+          <div className={styles.body}>
+            <div className={styles.navigationContainer}>
               {
                 stocks.map((title, index) => {
                   return <NavitaionItem key={index} title={title.toUpperCase()} url={`#${title.toLowerCase()}`}/>
                 })
               }
             </div>
-            <div className='content'>
+            <div className={styles.content}>
               <Route exact path='/' component={Home} />
               <Route path='/:code' component={Home} />
             </div>

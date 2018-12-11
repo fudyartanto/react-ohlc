@@ -1,9 +1,12 @@
 // @flow
 import React from 'react'
-import './styles.scss'
+import Humps from 'humps'
+import scss from  './styles.scss'
+
+const styles = Humps.camelizeKeys(scss)
 
 const Header = () => (
-  <div className='app-header'>
+  <div className={styles.appHeader}>
     <div className='logo'>Your Logo Here...</div>
   </div>
 )

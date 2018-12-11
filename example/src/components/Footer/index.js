@@ -1,10 +1,13 @@
 // @flow
 import React from 'react'
 import moment from 'moment'
-import './styles.scss'
+import Humps from 'humps'
+import scss from  './styles.scss'
+
+const styles = Humps.camelizeKeys(scss)
 
 const Footer = () => (
-  <div className='app-footer'>
+  <div className={styles.appFooter}>
     Ⓒ arfan.fudyartanto {moment().format('YYYY')}
   </div>
 )
