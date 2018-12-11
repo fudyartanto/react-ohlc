@@ -19,7 +19,7 @@ npm install && npm start
 
 ## Usage
 
-This library still not released yet so please refer to this repo directly. Add this line to your package.json dependencies.
+This library still not released yet, so please refer to this repo directly. Add this line to your package.json dependencies.
 
 ```javascript
 {
