@@ -3,9 +3,9 @@ import { Link, withRouter } from 'react-router-dom'
 import './styles.scss'
 
 const NavigationItem = (props) => {
-  const { title, url, location: { pathname } } = props
+  const { title, url, location: { hash } } = props
   let className = 'navigation-item'
-  if (pathname === url) {
+  if (hash === url) {
     className += ' active'
   }
 

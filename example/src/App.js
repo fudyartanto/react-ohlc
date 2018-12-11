@@ -33,7 +33,7 @@ class App extends Component<Props> {
             <div className='navigation-container'>
               {
                 stocks.map((title, index) => {
-                  return <NavitaionItem key={index} title={title.toUpperCase()} url={`/${title.toLowerCase()}`}/>
+                  return <NavitaionItem key={index} title={title.toUpperCase()} url={`#${title.toLowerCase()}`}/>
                 })
               }
             </div>

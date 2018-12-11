@@ -6,7 +6,7 @@ import ContentLoader from 'react-content-loader'
 import './styles.scss'
 
 type Props = {
-  match: { params: { code: string } },
+  location: { hash: string },
   height: number,
 }
 type State = {
@@ -34,7 +34,8 @@ class App extends Component<Props, State> {
   }
 
   getStockData = () => {
-    let { match: { params: { code } }  } = this.props
+    let { location: { hash } } = this.props
+    const code = hash.replace('#', '')
     const stockCode = code ? code : 'msft'
     this.setState({ isLoading: true })
     getStockTimeSeriesDaily(stockCode).then((data) => {
@@ -49,7 +50,7 @@ class App extends Component<Props, State> {
   }
 
   componentDidUpdate = (prevProps: Props) => {
-    if (this.props.match.params.code !== prevProps.match.params.code) {
+    if (this.props.location.hash !== prevProps.location.hash) {
       this.getStockData()
     }
   }
