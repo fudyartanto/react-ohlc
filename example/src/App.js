@@ -35,7 +35,8 @@ class App extends Component<Props> {
             <div className={styles.navigationContainer}>
               {
                 stocks.map((title, index) => {
-                  return <NavitaionItem key={index} title={title.toUpperCase()} url={`#${title.toLowerCase()}`}/>
+                  const url = index === 0 ? '' : `#${title.toLowerCase()}`
+                  return <NavitaionItem key={index} title={title.toUpperCase()} url={url}/>
                 })
               }
             </div>
